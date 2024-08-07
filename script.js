@@ -1,9 +1,8 @@
 
-// Getting the computer choice
+// Getting the computer choice and return it
 
 function getComputerChoice() {
     let randomValue = Math.random();
-    let computerChoice;
 
     if (randomValue < 1/3) {
         return 'rock';
@@ -13,3 +12,13 @@ function getComputerChoice() {
         return 'scissors';
     }
 }
+
+
+// Getting user choice and return it
+
+function getHumanChoice() {
+    let userInput = prompt("Enter your choice: ");
+    return userInput;
+}
+
+console.log(getHumanChoice());
