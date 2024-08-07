@@ -58,14 +58,19 @@ let computerSelection;
 
 function playGame() {
     for(let i = 0; i < 5; i++) {
+
         humanSelection = getHumanChoice();
         computerSelection = getComputerChoice();
+
         console.log(playRound(humanSelection, computerSelection));
     }
+
     if (computerScore > humanScore) {
         console.log('Winner: Computer.');
-    } else {
+    } else if (computerScore < humanScore) {
         console.log('Winner: You.');
+    } else {
+        console.log('Perfect Tie.');
     }
 }
 
