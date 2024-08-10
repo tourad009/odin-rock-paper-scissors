@@ -51,27 +51,32 @@ function playRound(humanChoice, computerChoice) {
     }
 }
 
-// Play 5 Rounds
+const buttons = document.querySelectorAll("button");
 
-let humanSelection;
-let computerSelection;
+const results= document.querySelector("#results");
 
-function playGame() {
-    for(let i = 0; i < 5; i++) {
+let paragraphResult = document.createElement("p");
 
-        humanSelection = getHumanChoice();
-        computerSelection = getComputerChoice();
+let paragraphScore = document.createElement("p");
+let headingWinner = document.createElement("h3");
 
-        console.log(playRound(humanSelection, computerSelection));
-    }
+results.appendChild(paragraphResult);
+results.appendChild(paragraphScore);
+results.appendChild(headingWinner);
 
-    if (computerScore > humanScore) {
-        console.log('Winner: Computer.');
-    } else if (computerScore < humanScore) {
-        console.log('Winner: You.');
-    } else {
-        console.log('Perfect Tie.');
-    }
-}
+buttons.forEach((button) => {
+    button.addEventListener('click', () => {
 
-playGame();
+        paragraphResult.textContent = playRound(button.textContent.toLowerCase(), getComputerChoice());
+
+        paragraphScore.textContent = `You ${humanScore} - ${computerScore} Computer`;
+
+        if (humanScore === 5) {
+            headingWinner.textContent = "You win!";
+        } else if (computerScore === 5) {
+            headingWinner.textContent = "Computer wins!";
+        }
+
+
+    })
+});
