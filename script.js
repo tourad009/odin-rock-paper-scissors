@@ -13,22 +13,6 @@ function getComputerChoice() {
     }
 }
 
-
-// Getting user choice and return it
-
-function getHumanChoice() {
-    let userInput = prompt("Enter your choice: ");
-    if (userInput.toLowerCase() === 'rock') {
-        return userInput;
-    } else if (userInput.toLowerCase() === 'paper') {
-        return userInput;
-    } else if (userInput.toLowerCase() === 'scissors') {
-        return userInput;
-    } else {
-        return 'Invalid choice';
-    }
-}
-
 // Keeping track of the players score
 
 let humanScore = 0;
